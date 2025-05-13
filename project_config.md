@@ -13,9 +13,10 @@
 
 ## Tech Stack
 
-*(List the primary technologies, frameworks, and languages used. E.g.,)*
-*   **Frontend:** React, TypeScript, CSS Modules
-*   **Backend:** Node.js, Express, PostgreSQL
+*   **Framework:** Next.js (Full-stack)
+*   **Language:** TypeScript
+*   **Styling:** CSS Modules
+*   **Database:** PostgreSQL
 *   **Testing:** Jest, React Testing Library
 *   **Linting/Formatting:** ESLint, Prettier
 
