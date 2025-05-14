@@ -13,10 +13,14 @@
 
 ## Tech Stack
 
-*   **Framework:** Next.js (Full-stack)
+*   **Framework:** Next.js ≥15.2.3 (Full-stack, Pages Router)
 *   **Language:** TypeScript
-*   **Styling:** CSS Modules
-*   **Database:** PostgreSQL
+*   **Styling:** Tailwind CSS
+*   **Database:** PostgreSQL (via Supabase)
+*   **ORM:** Prisma
+*   **Monitoring & Logging:** 
+    *   HyperDX (Logging & Tracing)
+    *   Sentry (Error Management)
 *   **Testing:** Jest, React Testing Library
 *   **Linting/Formatting:** ESLint, Prettier
 
@@ -24,20 +28,30 @@
 
 ## Critical Patterns & Conventions
 
-*(Document any non-standard but crucial design patterns, architectural decisions, or coding conventions specific to this project. E.g.,)*
-*   **State Management:** Redux Toolkit slices pattern.
-*   **API Design:** RESTful principles, specific endpoint naming convention `/api/v1/...`.
-*   **Error Handling:** Use custom `AppError` class for backend errors.
-*   **Commit Messages:** Follow Conventional Commits format.
+*   **State Management:** Zustand for global state management
+*   **Data Validation:** Zod for runtime type checking and validation
+*   **Authentication:**
+    *   Global middleware for route protection
+    *   Server Actions must include authentication verification
+*   **API Patterns:**
+    *   Server Actions for all mutations (create, update, delete operations)
+    *   API Routes for read operations and external service integrations
+    *   up-fetch for all client-side fetch operations
+*   **Error Handling:**
+    *   Use `next-error` for consistent error handling across the application
+    *   Implement error boundaries with `react-error-boundary`
+    *   Custom `AppError` class for backend errors
+    *   Error logging through Sentry
+    *   Client-side error tracking with `@sentry/nextjs`
+*   **Commit Messages:** Follow Conventional Commits format
 
 ---
 
 ## Key Constraints
 
-*(List any major limitations or non-negotiable requirements. E.g.,)*
-*   Must support IE11 (if applicable).
-*   Deployment target is AWS Lambda.
-*   Strict adherence to budget/performance targets.
+*   **Browser Support:** Must support the last 2 versions of Chrome and Edge
+*   **Deployment:** Vercel platform
+*   **Performance:** Strict adherence to Core Web Vitals metrics
 
 ---
 
